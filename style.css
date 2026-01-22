@@ -1,0 +1,27 @@
+img {border-radius: 50%;}
+p {
+color: green;  
+font-size: 12px;
+}
+
+h1, h2, h3 {font-family: sans-serif}
+
+section, p, h3 {
+	color: green;
+	font-size: 14pt;
+}
+p {
+  text-decoration: underline;
+}
+#header {
+color: yellow;
+}
+#firstname {
+background-color: red;
+}
+.address {
+font-style: italic;
+}
+p strong {
+background-color: green;
+}
