@@ -26,7 +26,7 @@ font-style: italic;
 p strong {
 background-color: green;
 }
-*/
+
 .red {
 color: red;
 }
@@ -58,4 +58,91 @@ color: violet;
 }
 p{
     font-family: Georgia;
+}
+
+*/
+/*
+h1,h2 {  background-color: yellowgreen;}
+p {background-color: lightgrey;}
+#css { background-color: lightblue; }
+#html { background-color: lightgreen; }
+strong { background-color: rgb(241, 165, 165); }
+
+p{display:block;}
+
+p{display:inline;}
+
+div {
+ background-color: red;
+ color: white;
+ font-size: 14pt;
+}
+
+h1 {
+ border-top: 5px solid red;
+ border-right: 2px dotted green;
+ border-bottom: 3px dashed rgb(4, 0, 255);
+ border-left: 4px double gold;
+}
+
+div {
+ border-radius: 10px;
+}
+
+div {
+  padding: 20px;
+}
+
+h1 {
+ padding-top: 10px;
+ padding-right: 20px;
+ padding-bottom: 10px;
+ padding-left: 20px;
+}
+
+h1 {
+ margin-top: 20px;
+ margin-right: 10px;
+ margin-bottom: 50px;
+ margin-left: 10px;
+}
+
+strong {
+  margin: 20px;
+}
+
+div {
+	width: 300px;
+  	margin: auto;
+}
+
+table, td, th { border: 2px solid black; }
+*/
+
+#flex-container {
+
+  border: 2px solid black;
+
+  padding: 20px;
+
+  height: 400px;
+
+  display: flex;
+
+  flex-flow: row wrap;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+.flex-item {
+  border-radius: 10px;
+  background-color: purple;
+  color: white;
+  text-align: center;
+  margin: 2px;
+  width: 50px;
+  height:50px;
 }
