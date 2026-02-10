@@ -69,7 +69,8 @@ nextBtn.addEventListener("click", displayNext);
 const pervBtn = document.querySelector("#prev"); 
 pervBtn.addEventListener("click", displayPerv);
 
-function displayNext(){
+
+function displayNext() {
     pervBtn.disabled = false;
     if(currentImg < 3){
         currentImg = currentImg + 1;
@@ -80,7 +81,7 @@ function displayNext(){
     const carouselImg = document.querySelector("#carousel-image");
     carouselImg.src = carousel[currentImg]; 
 }
-function displayPerv(){
+function displayPerv() {
     nextBtn.disabled = false;
     if(currentImg > 0){
         currentImg = currentImg - 1;
