@@ -1,4 +1,4 @@
-
+/*
 console.log("Hello World");
 
 // attaching a named function
@@ -11,14 +11,14 @@ function onClick() {
 
 // const myImg = document.querySelector("img"); 
 // myImg.addEventListener("click", addBorders);
-/*
+
 const imgArray = document.querySelectorAll('img'); 
 
 for (let index = 0; index < imgArray.length; index++) { 
     const element = imgArray[index]; 
     element.addEventListener('click', addBorders); 
 }
-*/
+
 
 const myLogo = document.getElementById("uncg-logo2"); 
 myLogo.addEventListener("click", addBorders);
@@ -92,3 +92,152 @@ function displayPerv() {
     const carouselImg = document.querySelector("#carousel-image");
     carouselImg.src = carousel[currentImg]; 
 }
+    */
+/*
+const image = document.querySelector('img.show');
+image.addEventListener("click", remove);
+
+function remove(event) {
+  const image = event.currentTarget;
+  image.classList.remove('show');
+  image.classList.add('hide');
+}
+
+const gallery = document.querySelectorAll('#container img');
+for (let index = 0; index < gallery.length; index++) {
+    const element = gallery[index];
+    element.addEventListener('click', expand);
+}
+
+function expand(event) {
+    const smallImage = event.currentTarget;
+    const bigImage = document.querySelector(".big");
+    bigImage.classList.remove('big');
+    bigImage.classList.add('small');
+    smallImage.classList.remove('small');
+    smallImage.classList.add('big');
+}
+
+const myDiv = document.querySelector("#div1");
+myDiv.addEventListener('click', addParagraph);
+
+function addParagraph(event) {
+    const myDiv = event.currentTarget;
+    let para = document.createElement("p");
+    let node = document.createTextNode("This is new."); para.appendChild(node);
+    myDiv.appendChild(para);
+    
+    let child = document.querySelector("#p1");
+    myDiv.insertBefore(para, child);
+} 
+
+const paragOther = document.querySelector("p.other");
+paragOther.addEventListener("click", removePara);
+
+function removePara(event){
+  const paragOther=event.currentTarget;
+  paragOther.remove();
+}
+
+function walkTree(root, level) {
+    if (root.nodeType === Node.TEXT_NODE) {
+        console.log(level + 'text:' + root.textContent);
+    } else {
+        console.log(level + root.nodeName);
+    }
+    for (const child of root.childNodes) {
+        walkTree(child, level + "    ");
+    }
+}
+walkTree(document.querySelector('html'), "");
+
+*/
+let hello = function () {
+    console.log('Hello, World');
+}
+hello();
+
+let f = function (a, b) {
+    return a * b
+};
+f(3, 4);
+
+let hello2 = () => {
+    console.log('Hello, World2');
+}
+hello2();
+
+let f2 = (a, b) => {
+    return a * b
+};
+f2(5, 7);
+
+let currentCount = 0;
+let randButton = document.querySelector("#random-btn");
+//randButton.addEventListener("click", countClicks(++currentCount));
+
+randButton.addEventListener("click", function () {
+    currentCount = currentCount + 1;
+    countClicks(currentCount);
+});
+
+function countClicks(currentCount) {
+    console.log("You clicked me " + currentCount + " times!");
+}
+
+var myTimerId1 = setTimeout(sayHello, 3000); 
+function sayHello() { 
+	alert("Hello, World!"); 
+}
+
+var myTimerId2 = setTimeout(
+function() { 
+	alert("Hello Anon");
+}, 3000);
+
+var myTimerId3 = setTimeout(sayHello, 3000, "JavaScript"); 
+function sayHello(name) { 
+	alert("Hello, " + name); 
+}
+
+let counter = 0;
+var myTimerId4 = setInterval(function () { 
+    console.log("Hello: " + ++counter); 
+}, 4000);
+
+clearTimeout(myTimerId4);
+
+let btn = document.querySelector('#my-btn');
+btn.addEventListener('click', startAnimation);
+function startAnimation() {
+    var elem = document.getElementById("animate");
+    var pos = 0;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (pos == 350) {
+            clearInterval(id);
+        } else {
+            pos++;
+            elem.style.top = pos + 'px';
+            elem.style.left = pos + 'px';
+        }
+    }
+}
+
+const person = {
+firstName: "John",
+lastName: "Doe",
+id: 5566,
+fullName: function () {
+    return this.firstName + " " + this.lastName;
+}
+};
+console.log("this in method:"+person.fullName());
+
+let globalVariable = this;
+console.log("this alone:" + globalVariable);
+
+function myFunction() {
+    return this;
+}
+console.log("this in a function:" + myFunction());
