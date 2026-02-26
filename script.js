@@ -320,8 +320,9 @@ fetch("https://dog.ceo/dog-api/");
 fetch("https://dog.ceo/api/breeds/image/random");
 */
 
-  const apiUrl = "https://api.github.com/users/YOUR-GITHUB-USERNAME/repos";
+  const apiUrl = "https://api.github.com/users/legobman/repos";
   // Make a GET request using the Fetch API
+  /*
 function getRepos() {
   fetch(apiUrl)
     .then((response) => {
@@ -338,8 +339,7 @@ function getRepos() {
       console.error("Error:", error);
     });
 }
-let myRepos = getRepos();
-console.log('Repos we just fetched: ', myRepos);
+*/
 
 async function getRepos() {
   try {
@@ -354,6 +354,8 @@ async function getRepos() {
     console.error("Error:", err);
   }
 }
+let myRepos = getRepos();
+console.log('Repos we just fetched: ', myRepos);
 
 async function getPokemonMove() {
   try {
