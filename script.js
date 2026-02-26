@@ -1,3 +1,4 @@
+"use strict";
 /*
 console.log("Hello World");
 
@@ -152,6 +153,7 @@ function walkTree(root, level) {
 walkTree(document.querySelector('html'), "");
 
 */
+/*
 let hello = function () {
     console.log('Hello, World');
 }
@@ -241,3 +243,168 @@ function myFunction() {
     return this;
 }
 console.log("this in a function:" + myFunction());
+*/
+/*
+setTimeout(()=>{
+    console.log("Timer expired!");
+}, 5000);
+
+console.log("I just set a timer.");
+
+const bear = {
+  name: 'Ice Bear',
+  hobbies: ['knitting', 'cooking', 'dancing']
+};
+const serializedBear = JSON.stringify(bear);
+console.log(serializedBear);
+
+fetch("https://api.github.com/users/YOUR-GITHUB-USERNAME/repos");
+
+fetch("https://opentdb.com/api.php?amount=3&category=18&difficulty=medium&type=multiple");
+*/
+/*
+const apiUrl = "https://api.github.com/users/legobman/repos";
+// Make a GET request using the Fetch API
+async function getRepos() {
+  try {
+    let res = await fetch(apiUrl);
+    if (!res.ok) {
+      throw new Error(await res.text())
+    }
+    res = await res.json();
+
+    console.log("Repos resolved: My Repo Data:", res);
+  } catch (err) {
+    console.error("Error:", err);
+  }
+}
+
+let myRepos = getRepos();
+console.log("Repos we just fetched: ", myRepos);
+
+async function getPokemonMove() {
+  try {
+      const response = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+      let pokemon = await response.json()
+      let move = pokemon.moves[0].move.name
+      console.log("Pikachu Move 1 (we have resolved): ", move);
+  }
+  catch (err) {
+      // replace w/ elegant error handling
+      console.log(err);
+  }
+}
+let result = getPokemonMove();
+console.log("Pikachu Move 1 (we are awaiting): ", result);
+*/
+/*
+function getRepos() {
+  fetch(apiUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((repoData) => {
+      // Process the retrieved repo data
+      console.log("Repos resolved: My Repo Data:", repoData);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
+fetch("https://dog.ceo/dog-api/");
+
+fetch("https://dog.ceo/api/breeds/image/random");
+*/
+
+  const apiUrl = "https://api.github.com/users/YOUR-GITHUB-USERNAME/repos";
+  // Make a GET request using the Fetch API
+function getRepos() {
+  fetch(apiUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((repoData) => {
+      // Process the retrieved repo data
+      console.log("Repos resolved: My Repo Data:", repoData);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+let myRepos = getRepos();
+console.log('Repos we just fetched: ', myRepos);
+
+async function getRepos() {
+  try {
+    let res = await fetch(apiUrl);
+    if (!res.ok) {
+      throw new Error(await res.text())
+    }
+    res = await res.json();
+
+    console.log("Repos resolved: My Repo Data:", res);
+  } catch (err) {
+    console.error("Error:", err);
+  }
+}
+
+async function getPokemonMove() {
+  try {
+      const response = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+      let pokemon = await response.json()
+      let move = pokemon.moves[0].move.name
+      console.log('Pikachu Move 1 (we have resolved):', move);
+  }
+  catch (err) {
+      // replace w/ elegant error handling
+      console.log(err);
+  }
+}
+let result = getPokemonMove();
+console.log('Pikachu Move 1 (we are awaiting):', result);
+
+fetch("https://github.com/Hipo/university-domains-list-api");
+
+let url = '[YOUR-CRUDCRUD-URL]/users';
+function submitForm() {
+  // pass in entire form tag
+  let params = new FormData(document.getElementById("input-form"));
+  let jsonBody = JSON.stringify(Object.fromEntries(params)); //make form data json string.
+  console.log(jsonBody);
+  fetch(url, {
+    method: "POST",
+    headers: {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/json"
+    }
+    , body: jsonBody
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw Error("Error in request: " + response.statusText);
+      }
+      return response.json();
+
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error("Error: ", error);
+    });
+}
+
+
+document.getElementById("input-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  submitForm();
+});
+
+fetch("https://dog.ceo/api/breeds/image/random");
