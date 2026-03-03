@@ -412,12 +412,24 @@ async function dogpic() {
 }
 */
 
+"use strict";
+const express = require("express");
+const app = express();
 
-function printPoem() {
-  console.log('Roses are red,');
-  console.log('Violets are blue,');
-  console.log('Sugar is sweet,');
-  console.log('And so are you.');
-  console.log();
-}
-printPoem();
+app.get("/home", function (req, res) {
+    res.send("Hello, World from Express!");
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, function () {
+    console.log('Example app listening on port: '+PORT+"!");
+});
+app.get("/hello", function (req, res) { 
+  res.type("text");
+  res.send("Hello from /hello! ");
+});
+
+app.get("/greeting", function (req, res) {
+  res.set("Content-Type", "application/json");
+  res.send({ "msg" : "Hello, from greeeting!" });  
+});
