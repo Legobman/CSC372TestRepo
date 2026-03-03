@@ -319,8 +319,9 @@ fetch("https://dog.ceo/dog-api/");
 
 fetch("https://dog.ceo/api/breeds/image/random");
 */
-
+/*
   const apiUrl = "https://api.github.com/users/legobman/repos";
+*/
   // Make a GET request using the Fetch API
   /*
 function getRepos() {
@@ -340,7 +341,7 @@ function getRepos() {
     });
 }
 */
-
+/*
 async function getRepos() {
   try {
     let res = await fetch(apiUrl);
@@ -371,42 +372,52 @@ async function getPokemonMove() {
 }
 let result = getPokemonMove();
 console.log('Pikachu Move 1 (we are awaiting):', result);
+*/
+/*
+const button = document.querySelector("button");
+const image = document.querySelector("img");
+button.addEventListener("click", dogpic);
+const apiUrl = "https://dog.ceo/api/breeds/image/random";
 
-fetch("https://github.com/Hipo/university-domains-list-api");
 
-let url = '[YOUR-CRUDCRUD-URL]/users';
-function submitForm() {
-  // pass in entire form tag
-  let params = new FormData(document.getElementById("input-form"));
-  let jsonBody = JSON.stringify(Object.fromEntries(params)); //make form data json string.
-  console.log(jsonBody);
-  fetch(url, {
-    method: "POST",
-    headers: {
-      "Accept": "application/json, text/plain, */*",
-      "Content-Type": "application/json"
-    }
-    , body: jsonBody
-  })
+function dogpic(){
+  fetch(apiUrl)
     .then((response) => {
       if (!response.ok) {
-        throw Error("Error in request: " + response.statusText);
+        throw new Error("Network response was not ok");
       }
       return response.json();
-
     })
-    .then((data) => {
-      console.log(data);
+    .then((repoData) => {
+      // Process the retrieved repo data
+      image.src = repoData.message;
     })
     .catch((error) => {
-      console.error("Error: ", error);
+      console.error("Error:", error);
     });
 }
+*/
+/*
+async function dogpic() {
+  try {
+    let res = await fetch(apiUrl);
+    if (!res.ok) {
+      throw new Error(await res.text())
+    }
+    res = await res.json();
+    image.src = res.message;
+  } catch (err) {
+    console.error("Error:", err);
+  }
+}
+*/
 
 
-document.getElementById("input-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  submitForm();
-});
-
-fetch("https://dog.ceo/api/breeds/image/random");
+function printPoem() {
+  console.log('Roses are red,');
+  console.log('Violets are blue,');
+  console.log('Sugar is sweet,');
+  console.log('And so are you.');
+  console.log();
+}
+printPoem();
