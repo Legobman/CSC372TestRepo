@@ -412,3 +412,42 @@ async function dogpic() {
 }
 */
 
+"use strict";
+(function () {
+  const MY_SERVER_BASEURL = "http://localhost:3000/";
+  window.addEventListener("load", init);
+
+  function init() {
+    getCityFromNodeServer();
+  }
+
+  function getCityFromNodeServer() {
+    let div = id("container");
+    let respData = document.createElement("p");
+
+    fetch(MY_SERVER_BASEURL + "cityInfo?state=NC&city=Greensboro")
+      .then(checkStatus)
+      .then((response) => {
+        console.log(response);
+        let node = document.createTextNode("City:" + response["city"]
+          + ", State:" + response["state"]);
+        respData.appendChild(node);
+        div.appendChild(respData);
+        div.style.backgroundColor = "lightblue";
+      })
+      .catch((error) => {
+        console.error("Error: ", error);
+      });
+  }
+
+  //helper functions
+  function id(idName) {
+    return document.getElementById(idName);
+  }
+  function checkStatus(response) {
+    if (!response.ok) {
+      throw Error("Error in request: " + response.statusText);
+    }
+    return response.json();
+  }
+})();
