@@ -322,8 +322,8 @@ fetch("https://dog.ceo/api/breeds/image/random");
 /*
   const apiUrl = "https://api.github.com/users/legobman/repos";
 */
-  // Make a GET request using the Fetch API
-  /*
+/*  
+// Make a GET request using the Fetch API
 function getRepos() {
   fetch(apiUrl)
     .then((response) => {
